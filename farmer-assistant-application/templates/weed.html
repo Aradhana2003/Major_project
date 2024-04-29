@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weed detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<style>
+    body {
+        background-color: #DBF3C9;
+    }
+
+    form {
+        max-width: 500px;
+        height: 500px;
+        margin: 5rem auto 1rem auto;
+        border-radius: 1rem;
+        padding: 2rem;
+        /* background-color: var(--clr-primary-400); */
+        background-image: url(/static/images/weed.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 1.2;
+        margin-bottom: 30px;
+
+    }
+
+    input,
+    select {
+        border-radius: 0.25rem;
+        border: none;
+        padding: 0.2rem 0.5rem;
+        background-color: #fff;
+        margin: 10px;
+    }
+
+    input[type="file"],
+    button {
+        margin-bottom: 30px;
+    }
+
+    .effect1 {
+        border-radius: 100vw;
+        background: transparent;
+        font-size: 1.5em;
+        padding: 0rem 1rem;
+        color: var(--clr-neutral-100);
+        border: 2px solid var(--clr-neutral-100);
+        font-weight: 700;
+        text-decoration: none;
+        transition: 0.5s;
+    }
+
+    .effect1:hover {
+        border-color: var(--clr-neutral-700);
+        background: var(--clr-neutral-100);
+        color: var(--clr-neutral-700);
+    }
+
+
+    @media screen and (max-width: 600px) {
+        body {
+            padding-inline: 1rem;
+        }
+
+        form {
+            grid-template-columns: 1fr;
+        }
+
+        h1 {
+            grid-column: span 1;
+        }
+
+        input[type="submit"] {
+            grid-column: span 1;
+        }
+    }
+</style>
+
+<body>
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+    <form method="POST" enctype="multipart/form-data" action="/weed_det">
+        <h1>Weed Detector</h1>
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit" class="effect1">Upload</button>
+    </form>
+</body>
+
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.35/dist/lenis.min.js"></script>
+<script src="/static/script.js"></script>
+
+</html>

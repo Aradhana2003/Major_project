@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <title>CNN Image Classifier</title>
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        main{
+            display: grid;
+            grid-auto-flow: column;
+            min-height: 100vh;
+
+        }
+
+        .left{
+            /* background: #3e8914f0 ; */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-image: url(/static/images/card1.jpg);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .right{
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1{
+            font-size: clamp(2rem,4vw,4rem);
+            text-align: center;
+        }
+
+        
+
+        .effect1 {
+            
+            border-radius: 100vw;
+            background: transparent;
+            font-size: 1.5em;
+            padding: 0rem 1rem;
+            color: var(--clr-neutral-100);
+            border: 2px solid var(--clr-neutral-100);
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.5s;
+        }
+        
+        .effect1:hover {
+            border-color: var(--clr-neutral-700);
+            background: var(--clr-neutral-100);
+            color: var(--clr-neutral-700);
+        }
+
+        input{
+            font-weight: 700;
+            padding: 0;
+            margin-inline: 0rem;
+            font: initial;
+        }
+
+        @media screen and (max-width: 900px){
+            main{
+                grid-auto-flow: row;
+            }
+
+            form{
+                display: flex;
+                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
+            
+            }
+        }
+
+    </style>
+</head>
+<script>
+    
+</script>
+<body>
+    <main>
+        <!-- <a href="/templates/index.html" class="back-btn">
+            <i class="ri-arrow-left-line"></i>
+        </a> -->
+        <div class="left">
+            <h1>CNN Image Classifier</h1>
+            <form method="POST" action="/predict" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" required>
+                <button class="effect1" type="submit">Predict</button>
+            </form>
+        </div>
+
+        <div class="right">
+            {% if filename %}
+            <h3>Uploaded Image</h3>
+            <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
+            {% endif %}
+            {% if prediction %}
+            <h2>Prediction: {{ prediction }}</h2>
+            <p>Confidence: {{ confidence }}%</p>
+            <p>Remedy: {{ remedy }}</p>
+            {% endif %}
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.35/dist/lenis.min.js"></script> 
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

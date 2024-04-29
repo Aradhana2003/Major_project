@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <div id="loader">
+    <img src="./images/logo.jpg" alt="">
+    <h1>TASK</h1>
+  </div>
+  <main>
+    <nav>
+      <div class="nleft">
+        <img src="/static/images/logo.jpg" alt="">
+      </div>
+      <div class="nright">
+        <div class="hamburger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="#home">home</a>
+          </li>
+          <li>
+            <a href="#about">about</a>
+          </li>
+          <li class="nav__item features1">
+            <a href="#features" class="nav__link">Features
+
+            </a>
+            <ul class="dropdown">
+              <li id="chatbotDropdown" class="dropdown_item"><a href="#" onclick="runStreamlit()"
+                  class="dropdown_link">Chatbot</a></li>
+              <li class="dropdown_item"><a href="{{ url_for('disease_recognition') }}" class="dropdown_link">Disease
+                  Recognition</a></li>
+              <li class="dropdown_item"><a href="{{ url_for('weed') }}" class="dropdown_link">Weed Detection</a></li>
+              <li class="dropdown_item"><a href="{{ url_for('gov_form') }}" class="dropdown_link">Govenment Scheme</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#contactus">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="home" class="wrapper">
+      <div class="hero">
+        <h1>
+          Agriculture is the backbone of our economy and society, but it's also a source
+
+        </h1>
+      </div>
+
+    </div>
+
+    <section id="about" class="about">
+      <h3>The Farmer Assistant Application seamlessly integrates cutting-edge technology to revolutionize agricultural
+        practices. This multifaceted tool employs advanced algorithms for crop disease recognition, features an
+        interactive chatbot for real-time agricultural assistance, conducts eligibility assessments for government
+        schemes, and utilizes image recognition for efficient weed detection, empowering farmers with comprehensive
+        support for optimal crop management.</h3>
+    </section>
+
+    <section class="features">
+      <div class="left">
+        <div class="active paragraph">
+          <h1>Crop Disease Recognition</h1>
+          <p>Crop disease recognition utilizes the combined power of Generative Adversarial Networks (GANs) and
+            Convolutional Neural Networks (CNNs) to enhance precision in identifying and diagnosing plant diseases,
+            revolutionizing agricultural management</p>
+        </div>
+        <div class="paragraph">
+          <h1>Chatbot</h1>
+          <p>Lamini LLM-powered question answering chatbot for farmers seamlessly provides tailored and accurate
+            agricultural insights, offering real-time assistance to address a wide range of queries and empower farmers
+            with valuable information</p>
+        </div>
+        <div class="paragraph">
+          <h1>Government Scheme Eligibility</h1><p>A Naive Bayes classifier applied to government scheme eligibility for farmers accurately determines the specific schemes they qualify for, streamlining the identification process based on key criteria and enhancing accessibility to crucial agricultural support initiatives.</p>
+        </div>
+        <div class="paragraph">
+          <h1>Weed Detection</h1><p>
+            Weed detection leverages the synergy of Generative Adversarial Networks (GANs) and You Only Look Once (YOLO) object detection, enhancing the efficiency and accuracy of identifying and localizing weeds in agricultural fields.</p>
+        </div>
+      </div>
+      <div class="right">
+        <div class="swiper sample-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="/static/images/card1.jpg" class="image">
+            </div>
+            <div class="swiper-slide">
+              <img src="/static/images/card2.jpg" class="image">
+            </div>
+            <div class="swiper-slide">
+              <img src="/static/images/card3.jpg" class="image">
+            </div>
+            <div class="swiper-slide">
+              <img src="/static/images/card4.jpg" class="image">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+
+
+    </section>
+    <section id="contactus">
+      <div class="container">
+        <div class="card">
+          <div class="banner-image"> </div>
+          <h1>Trupti</h1>
+          <h1>Pawar</h1>
+          <p>Student at Xavier Institute of Engineering</p>
+          <ul class="sci">
+            <li>
+              <a href="https://github.com/TruptiPawar23"><i class="ri-github-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-instagram-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="banner-image"> </div>
+          <h1>Aradhana</h1>
+          <h1>Singh</h1>
+          <p>Student at Xavier Institute of Engineering</p>
+          <ul class="sci">
+            <li>
+              <a href="https://github.com/Aradhana2003"><i class="ri-github-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-instagram-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="banner-image"> </div>
+          <h1> Shubham</h1>
+          <h1>Pole</h1>
+          <p>Student at Xavier Institute of Engineering</p>
+          <ul class="sci">
+            <li>
+              <a href="https://github.com/shubhammm41"><i class="ri-github-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-instagram-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="banner-image"> </div>
+          <h1> Krishna</h1>
+          <h1>Sabat</h1>
+          <p>Student at Xavier Institute of Engineering</p>
+          <ul class="sci">
+            <li>
+              <a href="https://github.com/krissh02"><i class="ri-github-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-instagram-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      </div>
+    </section>
+
+    <section class="footer">
+      <!-- <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, excepturi.</h3> -->
+      <p>&copy copyright@TASK.All Rights Reserved.</p>
+
+    </section>
+
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.35/dist/lenis.min.js"></script>
+  <script src="/static/script.js"></script>
+  <script>
+    function runStreamlit() {
+      // Change the URL to match your Flask server's endpoint
+      fetch('/run_streamlit')
+        .then(response => response.text())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    }
+  </script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

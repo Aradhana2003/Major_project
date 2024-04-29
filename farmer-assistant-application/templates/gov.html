@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Government Scheme Eligibility</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+  </head>
+
+  <style>
+   
+    body{
+        background-color: #DBF3C9;
+    }
+    form{
+        max-width: 1000px;
+        margin:5rem auto 1rem auto;
+        border-radius: 1rem;
+        padding: 2rem;
+        /* background-color: var(--clr-primary-400); */
+        background-image: url(/static/images/card3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem 2rem;
+    }
+
+    h1{
+        font-size: clamp(2rem,4vw,4rem);
+        line-height: 1.2;
+        grid-column: span 2;
+    }
+
+    input[type="submit"]{
+        grid-column: span 2;
+        justify-self: center;
+        padding: 0.2rem 1rem;
+    }
+
+    label{
+        font-size: 1.2rem;
+    }
+
+    input,select{
+        border-radius: 0.25rem;
+        border: none;
+        padding: 0.2rem 0.5rem;
+        background-color: #fff;
+    }
+
+    @media screen and (max-width: 600px){
+            body{
+                padding-inline: 1rem;
+            }
+
+            form{
+               grid-template-columns: 1fr;
+            }
+
+            h1{
+                grid-column: span 1;
+            }
+            
+            input[type="submit"]{
+                grid-column: span 1;
+            }
+        }
+  </style>
+  <body>
+    <!-- <a href="./index.html" class="back-btn">
+        <i class="ri-arrow-left-line"></i>
+    </a> -->
+    <form
+      name="scheme"
+      action="/predict_gov"
+      onsubmit="return validateForm()"
+      method="post"
+    >
+      <h1>Government Scheme Eligibility</h1>
+      <label for="age">Age (in years) <br>
+      <input type="number" name="age" />
+    </label>
+      <label for="citizen">Citizen of India <br>
+      <select name="citizen" id="citizen">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </label>
+      <label for="landowner">LandOwner Certificate <br>
+      <select name="landowner" id="landowner">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </label>
+      <label for="bankaccount">Bankaccount <br>
+      <select name="bankaccount" id="bankaccount">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </label>
+      <label for="landsize">Size of Land (in Hectares) <br>
+      <input
+        type="number"
+        id="landsize"
+        name="landsize"
+        min="0"
+        max="2"
+        step="0.1"
+      /></label>
+      <label for="farmertype">Type of Farmer <br>
+      <select name="farmertype" id="farmertype">
+        <option value="small & marginal">Small & Marginal</option>
+        <option value="cultivator">Cultivator</option>
+        <option value="sharecropper">Sharecropper</option>
+      </select>
+    </label>
+      <label for="income">Monthly Income <br>
+      <input type="number" name="income" />
+    </label>
+      <label for="coborrower">Co-borrower <br>
+      <select name="coborrower" id="coborrower">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </label>
+      <label for="kcc">KCC <br>
+      <select name="kcc" id="kcc">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </label>
+      <input class="effect1" type="submit" value="submit" />
+    </form>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.35/dist/lenis.min.js"></script> 
+    <script src="./script.js"></script>
+  </body>
+  <script>
+    function validateForm() {
+      var age = document.forms["scheme"]["age"].value;
+      var citizen = document.forms["scheme"]["citizen"].value;
+      var landowner = document.forms["scheme"]["landowner"].value;
+      var bankaccount = document.forms["scheme"]["bankaccount"].value;
+      var landsize = document.forms["scheme"]["landsize"].value;
+      var farmertype = document.forms["scheme"]["farmertype"].value;
+      var income = document.forms["scheme"]["income"].value;
+      var coborrower = document.forms["scheme"]["coborrower"].value;
+      var kcc = document.forms["scheme"]["kcc"].value;
+
+      if (age < 18 || age > 100) {
+        alert("Age must be between 18 and 100");
+        return false;
+      }
+      if (
+        citizen === "" ||
+        landowner === "" ||
+        bankaccount === "" ||
+        landsize === "" ||
+        farmertype === "" ||
+        coborrower === "" ||
+        kcc === ""
+      ) {
+        alert("Please fill out all select fields");
+        return false;
+      }
+      if (income < 1000 || income > 20000) {
+        alert("Monthly income must be between 1000 and 20000");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</html>

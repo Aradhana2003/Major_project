@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+    <title>Result</title>
+</head>
+<style>
+    
+    main {
+        display: grid;
+        grid-auto-flow: column;
+        min-height: 100vh;
+    }
+
+    .left {
+        /* background: #3e8914f0 ; */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url(/static/images/img.avif);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        color: black;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    .right {
+        background-color: #DBF3C9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    @media screen and (max-width: 900px){
+            main{
+                grid-auto-flow: row;
+            } }
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> <!-- Include jQuery for simplicity -->
+<script>
+    function updateSchemeDescription(scheme) {
+        var description = '';
+
+        switch (scheme) {
+            case 'Pradhan Mantri Kisan Maan-Dhan Yojana (PM-KMY)':
+                description = 'Pradhan Mantri Kisan Maandhan Yojana (PM-KMY) is a voluntary and contributory pension scheme for small and marginal farmers in India. The scheme was launched on 12 September 2019 by Prime Minister Narendra Modi.The main objective of the PM-KMY is to provide a guaranteed monthly pension of Rs. 3,000 to small and marginal farmers after they reach the age of 60 years.The scheme is open to all small and marginal farmers who are between the ages of 18 and 40 years and who have cultivable land up to 2 hectares.To join the scheme, farmers need to open a pension account with the Life Insurance Corporation of India (LIC). The minimum monthly contribution to the scheme is Rs. 55 and the maximum monthly contribution is Rs. 200. The contribution amount is fixed for the entire period of 20 years or until the farmer reaches the age of 60 years, whichever is earlier.The government will match the contribution made by the farmer up to a limit of Rs. 1,000 per month. This means that if a farmer contributes Rs. 55 per month, the government will contribute Rs. 55 per month. If a farmer contributes Rs. 200 per month, the government will contribute Rs. 1,000 per month.After the farmer reaches the age of 60 years, he/she will start receiving a monthly pension of Rs. 3,000. The pension will be paid for the rest of the farmers life.The PM-KMY is a unique and innovative scheme that will provide a guaranteed monthly pension to small and marginal farmers in India. The scheme is expected to benefit millions of farmers and will help to improve their financial security in old age.';
+                break;
+
+            case 'Pradhan Mantri KISAN Samman Nidhi(PM-KISAN)':
+                description = 'The Pradhan Mantri Kisan Samman Nidhi (PM-KISAN) Yojana is a farmer welfare scheme launched by the Government of India. Under this scheme, the government provides a direct benefit of Rs 6,000 per year to all small and marginal farmers in the country. This benefit is provided in three installments every 4 months. The objective of the PM-KISAN scheme is to promote farmers income and make them self-reliant. The eligibility criteria for the PM-KISAN scheme are as follows: The farmer must be a citizen of India, The farmer must be the owner of the land, The size of the farmers land should not exceed 2 hectares and The farmer must have a bank account. To avail of the benefits of the PM-KISAN scheme, the farmer has to apply online on the official website of the scheme. Along with the application, the farmer has to upload his/her Aadhaar card, bank account details, and land ownership documents. The PM-KISAN scheme is an important farmer welfare scheme. This scheme will benefit crores of farmers in the country. This scheme will increase the income of farmers and make them self-reliant. Here are some of the benefits of the PM-KISAN scheme: It will provide financial assistance to small and marginal farmers, It will help to increase the income of farmers, It will help to make farmers self-reliant, It will help to reduce the burden on farmers and It will help to improve the farmers standard of living.';
+                break;
+
+            case 'Pradhan Mantri Fasal Bima Yojana (PMFBY)':
+                description = 'The Pradhan Mantri Fasal Bima Yojana (PMFBY) is a crop insurance scheme launched by the Government of India in 2016. The scheme aims to provide financial protection to farmers against crop losses due to natural calamities, pests, and diseases. The scheme is mandatory for all farmers cultivating notified crops in notified areas. The premium for the scheme is shared between the government and the farmers. The government bears 50% of the premium for small and marginal farmers, while the farmers bear the remaining 50%. The scheme provides coverage against crop losses due to drought, flood, hailstorm, cyclone, pests, and disease. The scheme also provides coverage against post-harvest losses due to fire, theft, and other unforeseen events. The scheme is administered by the National Agricultural Insurance Company (NIAC) and its subsidiaries. The scheme has been well-received by farmers and has helped to reduce their vulnerability to crop losses. Here are some of the benefits of the PMFBY scheme: It provides financial protection to farmers against crop losses due to natural calamities, pests, and diseases, It helps to reduce farmers vulnerability to crop losses, It helps to improve the income of farmers, It helps to stabilize the agricultural sector and It helps to promote sustainable agriculture. The PMFBY scheme is a major step towards ensuring food security in India. The scheme has helped to reduce farmers vulnerability to crop losses and has helped to improve their income. The scheme is a major boost to the agricultural sector and is helping to promote sustainable agriculture.';
+                break;
+
+            case 'Kisan Credit Card (KCC) Scheme':
+                description = 'The Kisan Credit Card (KCC) Scheme, introduced to simplify credit accessibility for farmers, is a comprehensive initiative covering various agricultural aspects. Implemented by Commercial Banks, Small Finance Banks, and cooperatives, the scheme offers farmers low-interest rates ranging from 2% to 4%, significantly reducing the financial burden associated with loans. It facilitates timely credit for agriculture inputs, post-harvest expenses, consumption needs, and investments in allied activities. The KCC provides loans without collateral up to Rs. 1.6 lakh, and a maximum loan amount of Rs. 3 lakh can be sanctioned. The eligibility criteria encompass individual farmers, sharecroppers, tenant farmers, self-help groups, and those engaged in diverse agricultural and allied activities. With a validity of five years, the KCC undergoes an annual review, and its flexible repayment options and allowances for rescheduling in case of unforeseen events contribute to its effectiveness in supporting the financial needs of farmers.';
+                break;
+
+            case 'Pradhan mantri krishi sinchai yojana':
+                description = 'The Pradhan Mantri Krishi Sinchai Yojana (PMKSY), launched by the Government of India in 2015, is a centrally sponsored scheme aimed at providing financial assistance to farmers with less than 2 hectares of land for the installation of micro-irrigation systems. This initiative offers interest-free loans for the first two years, repayable over a 5-year period, contributing to increased adoption of micro-irrigation and enhancing water use efficiency. The scheme has garnered positive feedback from farmers, resulting in improved crop production, reduced production costs, enhanced produce quality, increased farmer income, and an overall improvement in living standards. Beyond its immediate agricultural impact, PMKSY is viewed as a significant stride toward ensuring food security and promoting sustainable agriculture in India.';
+                break;
+
+            case 'Not Eligible':
+                description = 'Description not available';
+                break;
+
+            default:
+                description = 'No description available.';
+        }
+
+        $('#scheme-description').text(description);
+    }
+
+    $(document).ready(function () {
+        var predictedScheme = '{{ prediction }}';
+        updateSchemeDescription(predictedScheme);
+    });
+</script>
+
+<body>
+    <main>
+        <div class="left">
+            <h1>Result</h1>
+            <p>The predicted government scheme for the provided information is:</p>
+            <h2>{{ prediction }}</h2>
+        </div>
+        <div class="right">
+            <div id="scheme-description">
+            </div>
+        </div>
+    </main>
+</body>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.35/dist/lenis.min.js"></script>
+<script src="/static/script.js"></script>
+
+</html>
